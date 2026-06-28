@@ -28,4 +28,3 @@ src/database/cleanup_*.py
 src/database/fix_*.py
 src/database/import_2024_positions.py
 src/database/insert_option_*.py
-src/database/rebuild.py
