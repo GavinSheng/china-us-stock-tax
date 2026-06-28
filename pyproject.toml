@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "china-us-stock-tax"
+version = "0.1.0"
+description = "美股及股权激励个税计算工具"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+    "pydantic>=2.0",
+    "pandas>=2.0",
+    "pdfplumber>=0.10",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+china-us-stock-tax = "src.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["src*"]

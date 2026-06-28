@@ -1,0 +1,31 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# 敏感数据：月结单 PDF、输出报表、交易 CSV、汇率文件、持仓文件、数据库
+input/
+output/
+*.csv
+*.json
+*.db
+*.sqlite
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.egg-info/
+.env
+
+# 一次性调试/修复脚本（含个人税务数据）
+debug_*.py
+audit_*.py
+full_calc_*.py
+parse_*.py
+src/database/cleanup_*.py
+src/database/fix_*.py
+src/database/import_2024_positions.py
+src/database/insert_option_*.py
+src/database/rebuild.py
