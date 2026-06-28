@@ -96,3 +96,24 @@ class RSUImporter:
         #     )
 
         print("未配置 RSU 数据，跳过导入。")
+
+
+# ============================================================
+# CLI entry point (保持向后兼容：python -m src.database.import_statements all)
+# ============================================================
+
+if __name__ == "__main__":
+    import sys
+    args = sys.argv[1:]
+
+    if not args or args[0] == "all":
+        print("=" * 60)
+        print("导入所有券商月结单")
+        print("=" * 60)
+        from src.database.rebuild import DatabaseRebuilder
+        rebuilder = DatabaseRebuilder()
+        rebuilder.rebuild(interactive=False)
+    else:
+        print(f"未知命令: {' '.join(args)}")
+        print("用法: python -m src.database.import_statements [all]")
+        sys.exit(1)
